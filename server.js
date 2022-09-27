@@ -67,9 +67,10 @@ app.post('/addUserData',
     console.log('sssss',sql,values);
     db.query(sql,values,function(err,result){
         if (err) {
-           console.error(err.stack)
+            console.error(err.stack)
+            return 
         }
-        res.send("data inserted successfully",result)
+        res.send(result)
         console.log("record is inserted");
         
     });
